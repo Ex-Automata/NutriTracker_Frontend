@@ -124,7 +124,7 @@ function saveLog(element, log) {
     if (!log.timestamp) {
         log.timestamp = Math.floor(Date.now() / 1000);
     }
-    fetchWithAuth('https://nutritracker.exautomata.ai/logs', {
+    fetchWithAuth('https://nutritracker.exautomata.ai:5000/logs', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(log)
@@ -145,7 +145,7 @@ function saveLog(element, log) {
 window.sendToAIChat = function(userMsg) {
     console.log('Actually sending message');
     chatHistory.push({ role: 'user', content: userMsg });
-    return fetchWithAuth('https://nutritracker.exautomata.ai/ai_chat', {
+    return fetchWithAuth('https://nutritracker.exautomata.ai:5000/ai_chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -317,7 +317,7 @@ function updateTodaysNutritionSummary(nutritionSummary) {
 }
 
 function fetchLogs() {
-    fetchWithAuth('https://nutritracker.exautomata.ai/logs?limit=20', {
+    fetchWithAuth('https://nutritracker.exautomata.ai:5000/logs?limit=20', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     })
