@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.nutritionData = undefined; // Store the latest nutrition data globally
         // Fetch nutrition data and update UI on Track tab load
         async function fetchNutritionAndUpdate() {
-            const res = await fetchWithAuth('https://nutritracker.exautomata.ai:5000/nutrition', { method: 'GET' });
+            const res = await fetchWithAuth('https://api.nutritracker.exautomata.ai/nutrition', { method: 'GET' });
             if (res.status === 401) {
                 logoutUser('Session expired or invalid. Please log in again.');
                 return;
