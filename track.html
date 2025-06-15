@@ -1,0 +1,64 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="track.css">
+<link rel="stylesheet" href="components/log.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+<style>
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+  font-size: 1.3em;
+  user-select: none;
+  line-height: 1;
+}
+</style>
+<div id="track-layout">
+    <div id="chat-main">
+        <div id="chat-container">
+            <div id="chat-messages"></div>
+            <form id="chat-form" autocomplete="off">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <aside id="sidebar">
+        <div class="nutrition-summary">
+            <h3>Today's Nutrition</h3>
+            <div class="nutrient">
+                <div class="nutrient-label">Calories <span class="nutrient-amount" id="nutrient-calories-amount">0 / 0 kcal</span></div>
+                <div class="bar" id="nutrient-calories-bar" style="width:100%">
+                    <div class="bar-fill" id="nutrient-calories-bar-fill" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="nutrient">
+                <div class="nutrient-label">Protein <span class="nutrient-amount" id="nutrient-protein-amount">0g / 0g</span></div>
+                <div class="bar protein" id="nutrient-protein-bar" style="width:100%">
+                    <div class="bar-fill" id="nutrient-protein-bar-fill" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="nutrient">
+                <div class="nutrient-label">Carbs <span class="nutrient-amount" id="nutrient-carbs-amount">0g / 0g</span></div>
+                <div class="bar carbs" id="nutrient-carbs-bar" style="width:100%">
+                    <div class="bar-fill" id="nutrient-carbs-bar-fill" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="nutrient">
+                <div class="nutrient-label">Fat <span class="nutrient-amount" id="nutrient-fat-amount">0g / 0g</span></div>
+                <div class="bar fat" id="nutrient-fat-bar" style="width:100%">
+                    <div class="bar-fill" id="nutrient-fat-bar-fill" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="log-entries">
+            <h4>Logs</h4>
+            <div class="log-list"></div>
+        </div>
+    </aside>
+</div>
+<script src="auth.js"></script>
+<script src="components/log.js"></script>
+<script src="track.js"></script>

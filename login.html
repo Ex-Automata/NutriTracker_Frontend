@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTracker Login</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- Use Firebase compat CDN scripts for browser usage -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">NutriTracker Login</div>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required>
+            <button type="button" id="login-btn" onclick="handleEmailLink(event)">
+                <s>Login via Magic Link</s> (Quota issues right now)
+            </button>
+        </form>
+        <button id="google-login" type="button" onclick="handleGoogleLogin()">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" class="google-logo">
+            <span class="google-btn-text">Login with Google</span>
+        </button>
+        <div id="auth-link-container" style="display:none;">
+            <div class="auth-flex-container"></div>
+                <div class='auth-link-message info center'>
+                    An email with login instructions has been sent.
+                </div>
+            </div>
+            <div id="auth-messages"></div>
+        </div>
+    </div>
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyBLbHRZ1492PZ8qdrPlJHQ1nL1e12vRl9Y",
+          authDomain: "nutritracker-62891.firebaseapp.com",
+          projectId: "nutritracker-62891",
+          storageBucket: "nutritracker-62891.firebasestorage.app",
+          messagingSenderId: "473387083033",
+          appId: "1:473387083033:web:90e5c87f4513591e2f1188",
+          measurementId: "G-Q4J533RRQ0"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
