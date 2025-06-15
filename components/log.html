@@ -1,0 +1,333 @@
+<template id="log-template">
+    <div class="log-entry pending">
+        <div class="log-title-row">
+            <div class="log-title" id="log-title" contenteditable="true"></div>
+            <button
+                class="log-expand-toggle hidden"
+                aria-label="Expand/collapse log"
+                tabindex="0"
+                style="background:none;border:none;outline:none;cursor:pointer;font-size:1.2em;color:#888;float:right;align-self:center;"
+            >
+                <span class="material-symbols-outlined log-expand-glyph">keyboard_arrow_down</span>
+            </button>
+        </div>
+        <div class="log-content">
+            <div class="log-bars macros">
+                <!-- Nutrition macros -->
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-calories">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-calories">
+                        <div class="bar-fill" id="log-bar-fill-calories"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-protein">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small protein hidden" id="log-bar-protein">
+                        <div class="bar-fill protein" id="log-bar-fill-protein"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-carbs">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small carbs hidden" id="log-bar-carbs">
+                        <div class="bar-fill carbs" id="log-bar-fill-carbs"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-fat">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small fat hidden" id="log-bar-fat">
+                        <div class="bar-fill fat" id="log-bar-fill-fat"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-fiber">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-fiber">
+                        <div class="bar-fill" id="log-bar-fill-fiber"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-sugar">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-sugar">
+                        <div class="bar-fill" id="log-bar-fill-sugar"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-sodium">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-sodium">
+                        <div class="bar-fill" id="log-bar-fill-sodium"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-bars micros">
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-potassium">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-potassium">
+                        <div class="bar-fill" id="log-bar-fill-potassium"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-calcium">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-calcium">
+                        <div class="bar-fill" id="log-bar-fill-calcium"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-iron">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-iron">
+                        <div class="bar-fill" id="log-bar-fill-iron"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-vitamin_a">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-vitamin_a">
+                        <div class="bar-fill" id="log-bar-fill-vitamin_a"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-vitamin_c">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-vitamin_c">
+                        <div class="bar-fill" id="log-bar-fill-vitamin_c"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-vitamin_d">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-vitamin_d">
+                        <div class="bar-fill" id="log-bar-fill-vitamin_d"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-vitamin_e">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-vitamin_e">
+                        <div class="bar-fill" id="log-bar-fill-vitamin_e"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-vitamin_k">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-vitamin_k">
+                        <div class="bar-fill" id="log-bar-fill-vitamin_k"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-magnesium">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-magnesium">
+                        <div class="bar-fill" id="log-bar-fill-magnesium"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-zinc">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-zinc">
+                        <div class="bar-fill" id="log-bar-fill-zinc"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-alcohol">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-alcohol">
+                        <div class="bar-fill" id="log-bar-fill-alcohol"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-bars body">
+                <!-- Nutrition micros -->
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-body_fat_percentage">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-body_fat_percentage">
+                        <div class="bar-fill" id="log-bar-fill-body_fat_percentage"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-muscle_mass_kg">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-muscle_mass_kg">
+                        <div class="bar-fill" id="log-bar-fill-muscle_mass_kg"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-bp_systolic">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-bp_systolic">
+                        <div class="bar-fill" id="log-bar-fill-bp_systolic"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-bp_diastolic">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-bp_diastolic">
+                        <div class="bar-fill" id="log-bar-fill-bp_diastolic"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-hdl_cholesterol">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-hdl_cholesterol">
+                        <div class="bar-fill" id="log-bar-fill-hdl_cholesterol"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-ldl_cholesterol">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-ldl_cholesterol">
+                        <div class="bar-fill" id="log-bar-fill-ldl_cholesterol"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-triglycerides">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-triglycerides">
+                        <div class="bar-fill" id="log-bar-fill-triglycerides"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-resting_heart_rate">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-resting_heart_rate">
+                        <div class="bar-fill" id="log-bar-fill-resting_heart_rate"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-bars sports">
+                <!-- Sports log fields -->
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-calories_spent">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-calories_spent">
+                        <div class="bar-fill" id="log-bar-fill-calories_spent"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-distance">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-distance">
+                        <div class="bar-fill" id="log-bar-fill-distance"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-steps">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-steps">
+                        <div class="bar-fill" id="log-bar-fill-steps"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-duration_min">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-duration_min">
+                        <div class="bar-fill" id="log-bar-fill-duration_min"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-weight_kg">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-weight_kg">
+                        <div class="bar-fill" id="log-bar-fill-weight_kg"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-reps">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-reps">
+                        <div class="bar-fill" id="log-bar-fill-reps"></div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label hidden" id="log-bar-label-sets">
+                        <span class="bar-label-text"></span>
+                        <span class="bar-label-value"></span>
+                    </div>
+                    <div class="bar small hidden" id="log-bar-sets">
+                        <div class="bar-fill" id="log-bar-fill-sets"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-actions">
+            <button class="accept-log" title="Accept">✅</button>
+            <button class="reject-log" title="Reject">❌</button>
+        </div>
+    </div>
+</template>

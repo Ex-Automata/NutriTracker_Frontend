@@ -1,0 +1,24 @@
+{
+  "name": "nutritracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.0-beta.3",
+    "jest-html-reporter": "^4.1.0",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.52.0"
+  },
+  "dependencies": {
+    "firebase": "^11.9.1"
+  }
+}

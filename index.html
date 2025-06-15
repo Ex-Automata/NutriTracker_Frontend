@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTracker</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container" id="main-app-container">
+        <div class="title">NutriTracker</div>
+        <div class="tabs">
+            <button class="tab active" id="tab-track">Track</button>
+            <!--button class="tab" id="tab-stats">Stats</button>
+            <button class="tab" id="tab-profile">Profile</button-->
+        </div>
+        <div id="main-content"></div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script>
+        // Initialize Firebase only if not already initialized
+        if (!window.firebase || !firebase.apps.length) {
+            const firebaseConfig = {
+                apiKey: "AIzaSyBLbHRZ1492PZ8qdrPlJHQ1nL1e12vRl9Y",
+                authDomain: "nutritracker-62891.firebaseapp.com",
+                projectId: "nutritracker-62891",
+                storageBucket: "nutritracker-62891.firebasestorage.app",
+                messagingSenderId: "473387083033",
+                appId: "1:473387083033:web:90e5c87f4513591e2f1188",
+                measurementId: "G-Q4J533RRQ0"
+            };
+            firebase.initializeApp(firebaseConfig);
+        }
+    </script>
+    <script src="auth.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
